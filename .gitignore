@@ -1,0 +1,28 @@
+# Ignore backup and autosave files
+*.asv
+*~
+
+# Ignore figures and Simulink auto-generated files
+*.fig
+*.slxc
+*.slx
+*.mdl
+*.mex*
+
+# Ignore logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Ignore user-specific/workspace data
+*.mat
+*.mcr
+*.mlappinstall
+*.mlpkginstall
+
+# Ignore metadata folders (optional)
+.DS_Store
+Thumbs.db
+
+# Ignore build output (if any)
+build/
