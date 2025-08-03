@@ -9,6 +9,10 @@ rng('default');
 %% Train & Evaluate SVM
 recs_all = ["100", "105", "106", "209", "220"];
 [SVMModel, XTest, YTest] = train_svm_classifier(recs_all);
+% [SVMModel, XTest, YTest] = train_svm_classifier(recs_all, false)
+% load('last_training_data.mat', 'XTrain', 'YTrain');
+% visualize_svm_separation([XTrain; XTest], [YTrain; YTest], 'SVM Feature Separation');
+
 
 YPred = predict(SVMModel, XTest);
 accuracy = mean(YPred == YTest);
@@ -42,6 +46,7 @@ sec_to_plot = 20;
 ecg = ecg_full(1:fs*sec_to_plot);
 
 [n_abnorm, n_total, labels, R_loc, P_loc, Q_loc, S_loc, T_loc] = classify_beats(ecg, SVMModel);
+% [n_abnorm, n_total, labels, R_loc, P_loc, Q_loc, S_loc, T_loc] = classify_beats(ecg, SVMModel);
 
 t = (1:length(ecg)) / fs;
 figure;
